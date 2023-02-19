@@ -1,0 +1,134 @@
+plugins {
+    id 'java'
+    id 'java-library'
+}
+
+group 'com.apexsoft'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+    google()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    configurations.all(){
+        Configuration configurations ->
+            configurations.resolutionStrategy.failOnVersionConflict()
+    }
+
+
+}
+
+allprojects {
+    task hello {task -> println "I'm $task.project.name" }
+}
+
+subprojects {
+    ext{
+        SpringBootVersion="1.1.0"
+    }
+}
+
+
+
+
+
+
+
+
+
+/*test {
+    useJUnitPlatform()
+}
+
+task task1 {
+    println("这是最简单的任务")
+    // 任务的行为
+    doFirst {
+        println("task doFirst")
+    }
+    doLast {
+        println "task doLast"
+    }
+}
+
+task A {
+    group "abc"
+    doLast {
+        println "TaskA.."
+    }
+}
+task 'B' {
+    group "abc"
+    doLast {
+        println "TaskB.."
+    }
+}
+//参数方式依赖: dependsOn后面用冒号
+task 'C'(dependsOn: ['A', 'B']) {
+    group "abc"
+    doLast {
+        println "TaskC.."
+    }
+}
+
+
+task("D") {
+    group("apexsoft")
+    description("this is my c task description")
+}
+
+class CustomTask extends DefaultTask{
+    @TaskAction
+    def doSelf(){
+        println "hello world"
+    }
+}
+
+
+
+def myTask = task("myDefinitionTask",type:CustomTask)
+myTask.doFirst{
+    println "doFirst...."
+}
+
+myTask.doLast(){
+    println "doLast...."
+}
+
+
+task hello {
+    doLast {
+        println 'hello 尚硅谷的粉丝们' }
+}
+tasks.addRule("对该规则的一个描述，便于调试、查看等"){
+    String taskName -> task(taskName) {
+        doLast {
+            println "该${taskName}任务不存在，请查证后再执行" }
+    }
+}
+
+
+File configFile = file("src/config.xml")*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
