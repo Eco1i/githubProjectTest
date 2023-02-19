@@ -23,13 +23,27 @@ dependencies {
 
 }
 
-allprojects {
-    task hello {task -> println "I'm $task.project.name" }
-}
+
 
 subprojects {
+
+    buildscript {
+        repositories {
+            maven {
+                url "https://maven.aliyun.com/repository/public"
+            }
+        }
+    }
+
     ext{
         SpringBootVersion="1.1.0"
+    }
+
+
+    repositories {
+        maven {
+            url "https://maven.aliyun.com/repository/public"
+        }
     }
 }
 
