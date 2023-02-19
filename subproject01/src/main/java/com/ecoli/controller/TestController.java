@@ -1,7 +1,6 @@
 package com.ecoli.controller;
 
 import com.ecoli.service.TestService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,6 +19,11 @@ public class TestController {
     @RequestMapping("/getInfoById")
     public String getInfoById(){
        return testService.getInfoById(1);
+    }
+
+    @RequestMapping("/getInfoByName")
+    public String getInfoByName(){
+        return testService.getInfoById(1);
     }
 
 
