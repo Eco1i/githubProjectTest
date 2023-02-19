@@ -21,5 +21,15 @@ public class TestController {
        return testService.getInfoById(1);
     }
 
+    @RequestMapping("/getInfoByName")
+    public String getInfoByName(){
+        return testService.getInfoById(1);
+    }
+
+    @RequestMapping("/getInfoByType")
+    public String getInfoByType(){
+        return testService.getInfoById(1);
+    }
+
 
 }
